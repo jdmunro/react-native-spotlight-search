@@ -1,0 +1,263 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F35C8FC21D19DABC00E97D91 /* RCTSpotlightSearch.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F35C8FC11D19DABC00E97D91 /* RCTSpotlightSearch.h */; };
+		F35C8FC41D19DABC00E97D91 /* RCTSpotlightSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = F35C8FC31D19DABC00E97D91 /* RCTSpotlightSearch.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F35C8FBC1D19DABC00E97D91 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				F35C8FC21D19DABC00E97D91 /* RCTSpotlightSearch.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		F35C8FBE1D19DABC00E97D91 /* libRCTSpotlightSearch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRCTSpotlightSearch.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F35C8FC11D19DABC00E97D91 /* RCTSpotlightSearch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTSpotlightSearch.h; sourceTree = "<group>"; };
+		F35C8FC31D19DABC00E97D91 /* RCTSpotlightSearch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCTSpotlightSearch.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F35C8FBB1D19DABC00E97D91 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F35C8FB51D19DABC00E97D91 = {
+			isa = PBXGroup;
+			children = (
+				F35C8FC01D19DABC00E97D91 /* RCTSpotlightSearch */,
+				F35C8FBF1D19DABC00E97D91 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F35C8FBF1D19DABC00E97D91 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F35C8FBE1D19DABC00E97D91 /* libRCTSpotlightSearch.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F35C8FC01D19DABC00E97D91 /* RCTSpotlightSearch */ = {
+			isa = PBXGroup;
+			children = (
+				F35C8FC11D19DABC00E97D91 /* RCTSpotlightSearch.h */,
+				F35C8FC31D19DABC00E97D91 /* RCTSpotlightSearch.m */,
+			);
+			path = RCTSpotlightSearch;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F35C8FBD1D19DABC00E97D91 /* RCTSpotlightSearch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F35C8FC71D19DABC00E97D91 /* Build configuration list for PBXNativeTarget "RCTSpotlightSearch" */;
+			buildPhases = (
+				F35C8FBA1D19DABC00E97D91 /* Sources */,
+				F35C8FBB1D19DABC00E97D91 /* Frameworks */,
+				F35C8FBC1D19DABC00E97D91 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RCTSpotlightSearch;
+			productName = RCTSpotlightSearch;
+			productReference = F35C8FBE1D19DABC00E97D91 /* libRCTSpotlightSearch.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F35C8FB61D19DABC00E97D91 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "James Munro";
+				TargetAttributes = {
+					F35C8FBD1D19DABC00E97D91 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = F35C8FB91D19DABC00E97D91 /* Build configuration list for PBXProject "RCTSpotlightSearch" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F35C8FB51D19DABC00E97D91;
+			productRefGroup = F35C8FBF1D19DABC00E97D91 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F35C8FBD1D19DABC00E97D91 /* RCTSpotlightSearch */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F35C8FBA1D19DABC00E97D91 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F35C8FC41D19DABC00E97D91 /* RCTSpotlightSearch.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		F35C8FC51D19DABC00E97D91 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F35C8FC61D19DABC00E97D91 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F35C8FC81D19DABC00E97D91 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../../node_modules/react-native/React/**",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		F35C8FC91D19DABC00E97D91 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../../node_modules/react-native/React/**",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F35C8FB91D19DABC00E97D91 /* Build configuration list for PBXProject "RCTSpotlightSearch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F35C8FC51D19DABC00E97D91 /* Debug */,
+				F35C8FC61D19DABC00E97D91 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F35C8FC71D19DABC00E97D91 /* Build configuration list for PBXNativeTarget "RCTSpotlightSearch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F35C8FC81D19DABC00E97D91 /* Debug */,
+				F35C8FC91D19DABC00E97D91 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F35C8FB61D19DABC00E97D91 /* Project object */;
+}
