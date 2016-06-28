@@ -105,6 +105,7 @@ RCT_EXPORT_METHOD(indexItems:(NSArray *)items resolver:(RCTPromiseResolveBlock)r
         CSSearchableItemAttributeSet *attributeSet = [[CSSearchableItemAttributeSet alloc] initWithItemContentType:(NSString*)kUTTypeJSON];
         attributeSet.title = item[@"title"];
         attributeSet.contentDescription = item[@"contentDescription"];
+        attributeSet.thumbnailURL = [NSURL fileURLWithPath:item[@"thumbnailUri"]];
         
         CSSearchableItem *searchableItem = [[CSSearchableItem alloc] initWithUniqueIdentifier:item[@"uniqueIdentifier"]
                                                                              domainIdentifier:itemEntry[@"domain"]
