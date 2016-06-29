@@ -12,19 +12,26 @@ import {
   View
 } from 'react-native';
 import SpotlightSearch from 'react-native-spotlight-search';
-const avatar = require('image!avatar');
-import resolveAssetSource from 'react-native/Libraries/Image/resolveAssetSource'
 
-alert(JSON.stringify(avatar));
-
-SpotlightSearch.indexItem({
-  domain: 'hello',
-  item: {
-    title: "rimpkins",
-    contentDescription: 'Recipe',
-    uniqueIdentifier: "1",
-    thumbnailUri: avatar.path,
-  },
+SpotlightSearch.deleteAllSearchableItems().then(() => {
+  SpotlightSearch.indexItem({
+    domain: 'fruit',
+    item: {
+      title: "Strawberry",
+      contentDescription: 'A sweet and juicy fruit.',
+      uniqueIdentifier: "1",
+      thumbnailUri: require('image!strawberry').path,
+    },
+  });
+  SpotlightSearch.indexItem({
+    domain: 'fruit',
+    item: {
+      title: "Banana",
+      contentDescription: 'A bright yellow fruit.',
+      uniqueIdentifier: "2",
+      thumbnailUri: require('image!banana').path,
+    },
+  });
 });
 
 class example extends Component {
