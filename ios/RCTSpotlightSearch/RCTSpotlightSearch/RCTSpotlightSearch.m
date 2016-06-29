@@ -90,13 +90,11 @@ RCT_EXPORT_MODULE();
     self.onSearchItemWasTappedCallback(@[userActivity.userInfo[CSSearchableItemActivityIdentifier]]);
 }
 
-RCT_EXPORT_METHOD(indexItem:(NSDictionary *)itemEntry resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
-{
+RCT_EXPORT_METHOD(indexItem:(NSDictionary *)itemEntry resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
     return [self indexItems:@[itemEntry] resolver:resolve rejecter:reject];
 }
 
-RCT_EXPORT_METHOD(indexItems:(NSArray *)items resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
-{
+RCT_EXPORT_METHOD(indexItems:(NSArray *)items resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
     NSMutableArray *itemsToIndex = [NSMutableArray array];
     
     [items enumerateObjectsUsingBlock:^(NSDictionary *itemEntry, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -156,8 +154,7 @@ RCT_REMAP_METHOD(deleteAllSearchableItems, resolver:(RCTPromiseResolveBlock)reso
     }];
 }
 
-RCT_EXPORT_METHOD(setOnSearchItemWasTapped:(RCTResponseSenderBlock)callback)
-{
+RCT_EXPORT_METHOD(setOnSearchItemWasTapped:(RCTResponseSenderBlock)callback) {
     self.onSearchItemWasTappedCallback = callback;
 }
 
