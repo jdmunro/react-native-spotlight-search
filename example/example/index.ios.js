@@ -23,7 +23,7 @@ SpotlightSearch.deleteAllSearchableItems().then(() => {
       thumbnailUri: require('image!strawberry').path,
     },
   });
-  SpotlightSearch.indexItem({
+SpotlightSearch.indexItem({
     domain: 'fruit',
     item: {
       title: "Banana",
