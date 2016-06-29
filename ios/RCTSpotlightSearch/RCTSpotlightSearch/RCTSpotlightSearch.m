@@ -154,7 +154,7 @@ RCT_REMAP_METHOD(deleteAllSearchableItems, resolver:(RCTPromiseResolveBlock)reso
     }];
 }
 
-RCT_EXPORT_METHOD(setOnSearchItemWasTapped:(RCTResponseSenderBlock)callback) {
+RCT_EXPORT_METHOD(searchItemTapped:(RCTResponseSenderBlock)callback) {
     self.onSearchItemWasTappedCallback = callback;
 }
 
