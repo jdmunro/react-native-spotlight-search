@@ -218,6 +218,7 @@
 					"$(inherited)",
 					"$(SRCROOT)/../../node_modules/react-native/React/**",
 				);
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -231,6 +232,7 @@
 					"$(inherited)",
 					"$(SRCROOT)/../../node_modules/react-native/React/**",
 				);
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
