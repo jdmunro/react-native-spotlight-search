@@ -7,4 +7,6 @@ A React Native module for iOS that provides Spotlight search functionality.
 * Example app demonstrating core functionality.
 * Simplify the API.
 * Documentation.
-* * Initial release.
+* Initial release.
+
+PRs welcome ;-)
