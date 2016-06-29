@@ -20,6 +20,12 @@ const sampleFruits = [
     key: '2',
     image: require('image!banana'),
   },
+  {
+    name: 'Kiwi',
+    details: 'Not a type of bird.',
+    key: '3',
+    image: require('image!kiwi'),
+  },
 ]
 
 SpotlightSearch.searchItemTapped((uniqueIdentifier) => {
