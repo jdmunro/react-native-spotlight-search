@@ -1,9 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
   AppRegistry,
@@ -13,26 +7,40 @@ import {
 } from 'react-native';
 import SpotlightSearch from 'react-native-spotlight-search';
 
-SpotlightSearch.deleteAllSearchableItems().then(() => {
-  SpotlightSearch.indexItem({
-    domain: 'fruit',
-    item: {
-      title: "Strawberry",
-      contentDescription: 'A sweet and juicy fruit.',
-      uniqueIdentifier: "1",
-      thumbnailUri: require('image!strawberry').path,
-    },
-  });
-  SpotlightSearch.indexItem({
-    domain: 'fruit',
-    item: {
-      title: "Banana",
-      contentDescription: 'A bright yellow fruit.',
-      uniqueIdentifier: "2",
-      thumbnailUri: require('image!banana').path,
-    },
-  });
+const sampleFruits = [
+  {
+    name: 'Strawberry',
+    details: 'A sweet and juicy fruit.',
+    key: '1',
+    image: require('image!strawberry'),
+  },
+  {
+    name: 'Banana',
+    details: 'A bright yellow fruit.',
+    key: '2',
+    image: require('image!banana'),
+  },
+]
+
+SpotlightSearch.searchItemTapped((uniqueIdentifier) => {
+  const selectedFruit = sampleFruits.filter((fruit) => fruit.key === uniqueIdentifier)[0];
+
+  alert(`You tapped on ${selectedFruit.name}!`);
 });
+
+const indexSearchableItems = (() => {
+  SpotlightSearch.indexItems(sampleFruits.map((fruit) => {
+    return {
+      domain: 'fruit',
+      item: {
+        title: fruit.name,
+        contentDescription: fruit.details,
+        uniqueIdentifier: fruit.key,
+        thumbnailUri: fruit.image.path,
+      },
+    };
+  }));
+})();
 
 class example extends Component {
   render() {
