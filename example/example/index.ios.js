@@ -38,13 +38,10 @@ SpotlightSearch.searchItemTapped((uniqueIdentifier) => {
 const indexSearchableItems = (() => {
   SpotlightSearch.indexItems(sampleFruits.map((fruit) => {
     return {
-      domain: 'fruit',
-      item: {
-        title: fruit.name,
-        contentDescription: fruit.details,
-        uniqueIdentifier: fruit.key,
-        thumbnailUri: fruit.image.path,
-      },
+      title: fruit.name,
+      contentDescription: fruit.details,
+      uniqueIdentifier: fruit.key,
+      thumbnailUri: fruit.image.path,
     };
   }));
 })();
@@ -69,7 +66,7 @@ const styles = StyleSheet.create({
   rowTextContainer: {
     flex: 1,
     justifyContent: 'center',
-    padding: 14,
+    padding: 4,
   },
   rowTitle: {
     fontSize: 20,

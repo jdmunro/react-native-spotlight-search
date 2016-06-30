@@ -120,7 +120,7 @@ RCT_EXPORT_METHOD(indexItems:(NSArray *)items resolver:(RCTPromiseResolveBlock)r
                                                    }];
 }
 
-RCT_EXPORT_METHOD(deleteSearchableItemsWithIdentifiers:(NSArray *)identifiers resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
+RCT_EXPORT_METHOD(deleteItemsWithIdentifiers:(NSArray *)identifiers resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
     [[CSSearchableIndex defaultSearchableIndex] deleteSearchableItemsWithIdentifiers:identifiers
                                                                    completionHandler:^(NSError * _Nullable error) {
                                                                        if (error) {
@@ -131,7 +131,7 @@ RCT_EXPORT_METHOD(deleteSearchableItemsWithIdentifiers:(NSArray *)identifiers re
                                                                    }];
 }
 
-RCT_EXPORT_METHOD(deleteSearchableItemsWithDomainIdentifiers:(NSArray *)identifiers resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
+RCT_EXPORT_METHOD(deleteItemsInDomains:(NSArray *)identifiers resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
     [[CSSearchableIndex defaultSearchableIndex] deleteSearchableItemsWithDomainIdentifiers:identifiers
                                                                          completionHandler:^(NSError * _Nullable error) {
                                                                              if (error) {
@@ -142,7 +142,7 @@ RCT_EXPORT_METHOD(deleteSearchableItemsWithDomainIdentifiers:(NSArray *)identifi
                                                                          }];
 }
 
-RCT_REMAP_METHOD(deleteAllSearchableItems, resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
+RCT_REMAP_METHOD(deleteAllItems, resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
     [[CSSearchableIndex defaultSearchableIndex] deleteAllSearchableItemsWithCompletionHandler:^(NSError * _Nullable error) {
         if (error) {
             reject(nil, nil, error);
