@@ -92,6 +92,36 @@ Simply use the same method as adding items. Be sure to reference the same key wh
 
 ### Removing Items
 
+Items can be removed by identifier:
+
+```
+SpotlightSearch.deleteItemsWithIdentifiers(["1", "2"]);
+```
+
+Or by domain:
+
+```
+SpotlightSearch.deleteItemsInDomains(["fruit"]);
+```
+
+Alternatively, you can delete _all_ items indexed by your app:
+
+```
+SpotlightSearch.deleteAllItems(["fruit"]);
+```
+
+### Handling User Interactions
+
+Optionally, you can choose to add a custom handler that will be invoked in the event of a user tapping one of the search items in the Spotlight results:
+
+```
+SpotlightSearch.searchItemTapped((uniqueIdentifier) => {
+  alert(`You tapped on ${uniqueIdentifier}!`);
+});
+```
+
+The parameter will be the ```uniqueIdentifier``` that the item was indexed with. You can use this to lookup the item and display information about it, e.g. by navigating to a relevant page in your app.
+
 ## To-do
 * Support built in types (location etc).
 * Improve image handling.
