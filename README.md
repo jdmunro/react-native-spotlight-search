@@ -51,6 +51,10 @@ Like this:
 
 ## Usage
 
+First up, import the module:
+
+```import SpotlightSearch from 'react-native-spotlight-search';```
+
 ### Indexing Items
 
 You can either add an array of items:
