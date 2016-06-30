@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  Image,
 } from 'react-native';
 import SpotlightSearch from 'react-native-spotlight-search';
 
@@ -26,7 +27,7 @@ const sampleFruits = [
     key: '3',
     image: require('image!kiwi'),
   },
-]
+];
 
 SpotlightSearch.searchItemTapped((uniqueIdentifier) => {
   const selectedFruit = sampleFruits.filter((fruit) => fruit.key === uniqueIdentifier)[0];
@@ -48,25 +49,6 @@ const indexSearchableItems = (() => {
   }));
 })();
 
-class example extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
-    );
-  }
-}
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -74,16 +56,53 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-  welcome: {
+  introText: {
+    marginTop: 64,
+  },
+  row: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingLeft: 10,
+    paddingRight: 10,
+  },
+  rowTextContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    padding: 14,
+  },
+  rowTitle: {
     fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
   },
-  instructions: {
-    textAlign: 'center',
+  rowDescription: {
     color: '#333333',
-    marginBottom: 5,
   },
+  rowImage: {
+    width: 64,
+    height: 64,
+  }
 });
 
-AppRegistry.registerComponent('example', () => example);
+const FruitRow = ({fruit}) => (
+  <View style={styles.row}>
+    <Image resizeMode={Image.resizeMode.contain}
+      style={styles.rowImage}
+      source={fruit.image}/>
+    <View style={styles.rowTextContainer}>
+      <Text style={styles.rowTitle}>{fruit.name}</Text>
+      <Text style={styles.rowDescription}>{fruit.details}</Text>
+    </View>
+  </View>
+);
+
+const Example = () => (
+  <View style={styles.container}>
+    <Text style={styles.introText}>The items below have been added to the Spotlight search index on this device</Text>
+    {sampleFruits.map((fruit) => (
+      <FruitRow key={fruit.key}
+        fruit={fruit}/>
+    ))}
+  </View>
+);
+
+AppRegistry.registerComponent('example', () => Example);
