@@ -55,12 +55,14 @@ SpotlightSearch.indexItems([
         title: 'Strawberry',
         contentDescription: 'A sweet and juicy fruit.',
         uniqueIdentifier: '1',
+        domain: 'fruit',
         thumbnailUri: require('image!strawberry').path,
     },
     {
         title: 'Strawberry',
         contentDescription: 'Not a type of bird.',
         uniqueIdentifier: '2',
+        domain: 'fruit',
         thumbnailUri: require('kiwi!strawberry').path,
     },
 ]);
@@ -84,6 +86,7 @@ SpotlightSearch.indexItem({
 |**`title`**|The title of the search item.|`string`|Yes|
 |**`contentDescription`**|A description which appears below the title in the search results.|`string`|No|
 |**`uniqueIdentifier`**|A unique and stable identifier. Used to refer to the item. |`string`|Yes|
+|**`domain`**|A string for grouping related items together in a way that makes sense. Not displayed to the user. |`string`|Yes|
 |**`thumbnailUri`**|A local file URI to a thumbnail image.|`string`|No|
 
 ### Updating Items
