@@ -79,12 +79,12 @@ SpotlightSearch.indexItem({
 
 #### Search Item Properties
 
-| Property | Description | Type |
-|---|---|---|
-|**`title`**|The title of the search item.|`string`|
-|**`contentDescription`**|A description which appears below the title in the search results.|`string`|
-|**`uniqueIdentifier`**|A unique and stable identifier. Used to refer to the item. |`string`|
-|**`thumbnailUri`**|A local file URI to a thumbnail image.|`string`|
+| Property | Description | Type | Required |
+|---|----|---|---|
+|**`title`**|The title of the search item.|`string`|Yes|
+|**`contentDescription`**|A description which appears below the title in the search results.|`string`|No|
+|**`uniqueIdentifier`**|A unique and stable identifier. Used to refer to the item. |`string`|Yes|
+|**`thumbnailUri`**|A local file URI to a thumbnail image.|`string`|No|
 
 ### Updating Items
 
