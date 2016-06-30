@@ -156,12 +156,9 @@ Suggestions on how to improve this are welcome!
 
 ## To-do
 
-* Support built in types (location etc).
+* Support additional built in types (location etc).
 * Improve image handling.
-* Example app demonstrating core functionality.
 * Public links.
-* Simplify the API.
-* Documentation.
 * Initial release.
 * New iOS 10 features.
 
