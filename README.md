@@ -114,7 +114,22 @@ SpotlightSearch.deleteItemsInDomains(["fruit"]);
 Alternatively, you can delete _all_ items indexed by your app:
 
 ```
-SpotlightSearch.deleteAllItems(["fruit"]);
+SpotlightSearch.deleteAllItems();
+```
+
+### Promises
+
+All API index and delete methods are asynchronous and return promises. You can chain things like this:
+
+```
+SpotlightSearch.deleteAllItems().then(() => {
+  SpotlightSearch.indexItem({
+      title: 'Strawberry',
+      contentDescription: 'A sweet and juicy fruit.',
+      uniqueIdentifier: '1',
+      thumbnailUri: require('image!strawberry').path,
+  });
+});
 ```
 
 ### Handling User Interactions
