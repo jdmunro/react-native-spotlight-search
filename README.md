@@ -91,7 +91,7 @@ SpotlightSearch.indexItem({
 |**`contentDescription`**|A description which appears below the title in the search results.|`string`|No|
 |**`uniqueIdentifier`**|A unique and stable identifier. Used to refer to the item. |`string`|Yes|
 |**`domain`**|A string for grouping related items together in a way that makes sense. Not displayed to the user. |`string`|Yes|
-|**`thumbnailUri`**|A local file URI to a thumbnail image.|`string`|No|
+|**`thumbnailUri`**|A local file URI to a thumbnail image. See [A Note About Thumbnails](#A Note About Thumbnails).|`string`|No|
 
 ### Updating Items
 
@@ -143,6 +143,14 @@ SpotlightSearch.searchItemTapped((uniqueIdentifier) => {
 ```
 
 The parameter will be the ```uniqueIdentifier``` that the item was indexed with. You can use this to lookup the item and display information about it, e.g. by navigating to a relevant page in your app.
+
+## A Note About Thumbnails
+
+Currently, in order to use an image it must exist locally on the device.
+
+This means it is not possible to use images hosted on the web. Additionally, there is a limitation that you cannot use a statically imported image managed by React Native. Instead, you _must_ manually add the image to your app's asset catalog or alternatively use an image that is created within the app which you can access the URI of.
+
+Suggestions on how to improve this are welcome!
 
 ## To-do
 * Support built in types (location etc).
