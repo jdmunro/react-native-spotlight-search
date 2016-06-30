@@ -43,6 +43,55 @@ Like this:
 
 ![Header Search Paths](http://i.imgur.com/r69EMcQ.png)
 
+## Usage
+
+### Indexing Items
+
+You can either add an array of items:
+
+```
+SpotlightSearch.indexItems([
+    {
+        title: 'Strawberry',
+        contentDescription: 'A sweet and juicy fruit.',
+        uniqueIdentifier: '1',
+        thumbnailUri: require('image!strawberry').path,
+    },
+    {
+        title: 'Strawberry',
+        contentDescription: 'Not a type of bird.',
+        uniqueIdentifier: '2',
+        thumbnailUri: require('kiwi!strawberry').path,
+    },
+]);
+```
+
+Or individual items:
+
+```
+SpotlightSearch.indexItem({
+    title: 'Strawberry',
+    contentDescription: 'A sweet and juicy fruit.',
+    uniqueIdentifier: '1',
+    thumbnailUri: require('image!strawberry').path,
+});
+```
+
+#### Search Item Properties
+
+| Property | Description | Type |
+|---|---|---|
+|**`title`**|The title of the search item.|`string`|
+|**`contentDescription`**|A description which appears below the title in the search results.|`string`|
+|**`uniqueIdentifier`**|A unique and stable identifier. Used to refer to the item. |`string`|
+|**`thumbnailUri`**|A local file URI to a thumbnail image.|`string`|
+
+### Updating Items
+
+Simply use the same method as adding items. Be sure to reference the same key when indexing the item so that any new metadata changes will be reflected in the Spotlight index.
+
+### Removing Items
+
 ## To-do
 * Support built in types (location etc).
 * Improve image handling.
