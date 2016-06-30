@@ -3,7 +3,7 @@ A React Native module for iOS that provides Spotlight search functionality. This
 
 Please note this is an early version and the features and API are likely to change.
 
-# Current Features
+## Current Features
 * Adding items.
 * Updating items.
 * Deleting items.
@@ -12,17 +12,17 @@ Please note this is an early version and the features and API are likely to chan
 
 ![Spotlight Search Demo](http://i.imgur.com/tbI3yAs.gif)
 
-# Installation
+## Installation
 
 `$ npm install react-native-vector-icons --save`
 
-## iOS 
+### iOS 
 
-### With [`rnpm`](https://github.com/rnpm/rnpm)
+#### With [`rnpm`](https://github.com/rnpm/rnpm)
 
 `$ rnpm link`
 
-### In Your AppDelegate (Optional)
+#### In Your AppDelegate (Optional)
 
 If you wish to be able to handle search item tapped callbacks, you'll need to add the following code to your AppDelegate file:
 
@@ -43,7 +43,7 @@ Like this:
 
 ![Header Search Paths](http://i.imgur.com/r69EMcQ.png)
 
-# To-do
+## To-do
 * Support built in types (location etc).
 * Improve image handling.
 * Example app demonstrating core functionality.
