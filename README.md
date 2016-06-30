@@ -14,15 +14,19 @@ Please note this is an early version and the features and API are likely to chan
 
 ## Installation
 
-`$ npm install react-native-vector-icons --save`
+`$ npm install react-native-spotlight-search --save`
 
-### iOS 
+### iOS
 
 #### With [`rnpm`](https://github.com/rnpm/rnpm)
 
 `$ rnpm link`
 
-#### In Your AppDelegate (Optional)
+#### Manually
+
+Simply add `RCTSpotlightSearch.xcodeproj` to **Libraries** and add `libRCTSpotlightSearch.a` to **Link Binary With Libraries** under **Build Phases**. [More info and screenshots about how to do this is available in the React Native documentation](http://facebook.github.io/react-native/docs/linking-libraries-ios.html#content).
+
+### In Your AppDelegate (Optional)
 
 If you wish to be able to handle search item tapped callbacks, you'll need to add the following code to your AppDelegate file:
 
