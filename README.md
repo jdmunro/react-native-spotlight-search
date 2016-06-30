@@ -1,9 +1,11 @@
 # react-native-spotlight-search
+
 A React Native module for iOS that provides Spotlight search functionality. This allows you to index content from within your React Native app so that it appears in the iOS device's Spotlight search index, potentially increasing the exposure of your app.
 
 Please note this is an early version and the features and API are likely to change.
 
 ## Current Features
+
 * Adding items.
 * Updating items.
 * Deleting items.
@@ -91,7 +93,7 @@ SpotlightSearch.indexItem({
 |**`contentDescription`**|A description which appears below the title in the search results.|`string`|No|
 |**`uniqueIdentifier`**|A unique and stable identifier. Used to refer to the item. |`string`|Yes|
 |**`domain`**|A string for grouping related items together in a way that makes sense. Not displayed to the user. |`string`|Yes|
-|**`thumbnailUri`**|A local file URI to a thumbnail image. See [A Note About Thumbnails](#A Note About Thumbnails).|`string`|No|
+|**`thumbnailUri`**|A local file URI to a thumbnail image. See [A Note About Thumbnails](#a-note-about-thumbnails).|`string`|No|
 
 ### Updating Items
 
@@ -153,6 +155,7 @@ This means it is not possible to use images hosted on the web. Additionally, the
 Suggestions on how to improve this are welcome!
 
 ## To-do
+
 * Support built in types (location etc).
 * Improve image handling.
 * Example app demonstrating core functionality.
