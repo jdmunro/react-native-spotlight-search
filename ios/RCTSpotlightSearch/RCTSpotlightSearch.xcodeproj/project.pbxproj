@@ -258,6 +258,7 @@
 				F35C8FC91D19DABC00E97D91 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

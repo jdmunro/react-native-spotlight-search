@@ -90,23 +90,21 @@ RCT_EXPORT_MODULE();
     self.onSearchItemWasTappedCallback(@[userActivity.userInfo[CSSearchableItemActivityIdentifier]]);
 }
 
-RCT_EXPORT_METHOD(indexItem:(NSDictionary *)itemEntry resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
-    return [self indexItems:@[itemEntry] resolver:resolve rejecter:reject];
+RCT_EXPORT_METHOD(indexItem:(NSDictionary *)item resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
+    return [self indexItems:@[item] resolver:resolve rejecter:reject];
 }
 
 RCT_EXPORT_METHOD(indexItems:(NSArray *)items resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
     NSMutableArray *itemsToIndex = [NSMutableArray array];
     
-    [items enumerateObjectsUsingBlock:^(NSDictionary *itemEntry, NSUInteger idx, BOOL * _Nonnull stop) {
-        NSDictionary *item = itemEntry[@"item"];
-        
+    [items enumerateObjectsUsingBlock:^(NSDictionary *item, NSUInteger idx, BOOL * _Nonnull stop) {
         CSSearchableItemAttributeSet *attributeSet = [[CSSearchableItemAttributeSet alloc] initWithItemContentType:(NSString*)kUTTypeJSON];
         attributeSet.title = item[@"title"];
         attributeSet.contentDescription = item[@"contentDescription"];
         attributeSet.thumbnailURL = [NSURL fileURLWithPath:item[@"thumbnailUri"]];
         
         CSSearchableItem *searchableItem = [[CSSearchableItem alloc] initWithUniqueIdentifier:item[@"uniqueIdentifier"]
-                                                                             domainIdentifier:itemEntry[@"domain"]
+                                                                             domainIdentifier:item[@"domain"]
                                                                                  attributeSet:attributeSet];
         
         [itemsToIndex addObject:searchableItem];
