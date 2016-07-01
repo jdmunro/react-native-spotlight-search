@@ -15,6 +15,13 @@
   "bugs": {
     "url": "https://github.com/jdmunro/react-native-spotlight-search/issues"
   },
+  "keywords": [
+    "react-native",
+    "react",
+    "ios",
+    "spotlight",
+    "search"
+  ],
   "homepage": "https://github.com/jdmunro/react-native-spotlight-search#readme",
   "devDependencies": {
     "react-native": "^0.27.2"
