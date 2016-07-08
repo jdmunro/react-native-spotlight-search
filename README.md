@@ -69,7 +69,7 @@ SpotlightSearch.indexItems([
         thumbnailUri: require('image!strawberry').path,
     },
     {
-        title: 'Strawberry',
+        title: 'Kiwi',
         contentDescription: 'Not a type of bird.',
         uniqueIdentifier: '2',
         domain: 'fruit',
