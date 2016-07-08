@@ -98,6 +98,7 @@ SpotlightSearch.indexItem({
 |**`uniqueIdentifier`**|A unique and stable identifier. Used to refer to the item. |`string`|Yes|
 |**`domain`**|A string for grouping related items together in a way that makes sense. Not displayed to the user. |`string`|Yes|
 |**`thumbnailUri`**|A local file URI to a thumbnail image. See [A Note About Thumbnails](#a-note-about-thumbnails).|`string`|No|
+|**`keywords`**|An array of keywords which can be used to help inform the search index. Not visible to the user.|`[string]`|No|
 
 ### Updating Items
 
