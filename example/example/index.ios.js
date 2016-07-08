@@ -14,18 +14,21 @@ const sampleFruits = [
     details: 'A sweet and juicy fruit.',
     key: '1',
     image: require('image!strawberry'),
+    keywords: ['delicious', 'edible'],
   },
   {
     name: 'Banana',
     details: 'A bright yellow fruit.',
     key: '2',
     image: require('image!banana'),
+    keywords: ['plantain'],
   },
   {
     name: 'Kiwi',
     details: 'Not a type of bird.',
     key: '3',
     image: require('image!kiwi'),
+    keywords: ['new zeland'],
   },
 ];
 
@@ -42,6 +45,7 @@ const indexSearchableItems = (() => {
       contentDescription: fruit.details,
       uniqueIdentifier: fruit.key,
       thumbnailUri: fruit.image.path,
+      keywords: fruit.keywords,
     };
   }));
 })();
