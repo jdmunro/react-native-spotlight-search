@@ -23,7 +23,7 @@
     "search"
   ],
   "homepage": "https://github.com/jdmunro/react-native-spotlight-search#readme",
-  "devDependencies": {
-    "react-native": "^0.27.2"
+  "peerDependencies": {
+    "react-native": "^0.28.0"
   }
 }
