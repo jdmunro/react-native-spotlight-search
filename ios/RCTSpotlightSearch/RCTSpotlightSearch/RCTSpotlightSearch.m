@@ -10,21 +10,24 @@
 @import MobileCoreServices;
 #import "RCTBridge.h"
 #import "RCTSpotlightSearch.h"
+#import "RCTEventDispatcher.h"
 
 static NSString *const kHandleContinueUserActivityNotification = @"handleContinueUserActivity";
 static NSString *const kUserActivityKey = @"userActivity";
+static NSString *const kSpotlightSearchItemTapped = @"spotlightSearchItemTapped";
 
 @interface RCTSpotlightSearch ()
 
 @property (nonatomic, strong) id<NSObject> continueUserActivityObserver;
 @property (nonatomic, strong) id<NSObject> bundleDidLoadObserver;
-@property (nonatomic, copy) RCTResponseSenderBlock onSearchItemWasTappedCallback;
 
 @end
 
 @implementation RCTSpotlightSearch
 
 RCT_EXPORT_MODULE();
+
+@synthesize bridge = _bridge;
 
 - (instancetype)init {
     if ((self = [super init])) {
@@ -84,10 +87,13 @@ RCT_EXPORT_MODULE();
 }
 
 - (void)handleContinueUserActivity:(NSUserActivity *)userActivity {
-    if (!self.onSearchItemWasTappedCallback) {
+    NSString *uniqueItemIdentifier = userActivity.userInfo[CSSearchableItemActivityIdentifier];
+    
+    if (!uniqueItemIdentifier) {
         return;
     }
-    self.onSearchItemWasTappedCallback(@[userActivity.userInfo[CSSearchableItemActivityIdentifier]]);
+    
+    [self.bridge.eventDispatcher sendAppEventWithName:@"spotlightSearchItemTapped" body:uniqueItemIdentifier];
 }
 
 RCT_EXPORT_METHOD(indexItem:(NSDictionary *)item resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
@@ -154,10 +160,6 @@ RCT_REMAP_METHOD(deleteAllItems, resolver:(RCTPromiseResolveBlock)resolve reject
             resolve(nil);
         }
     }];
-}
-
-RCT_EXPORT_METHOD(searchItemTapped:(RCTResponseSenderBlock)callback) {
-    self.onSearchItemWasTappedCallback = callback;
 }
 
 @end
