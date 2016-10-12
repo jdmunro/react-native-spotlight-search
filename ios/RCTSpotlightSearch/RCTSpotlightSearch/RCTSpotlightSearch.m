@@ -93,7 +93,7 @@ RCT_EXPORT_MODULE();
         return;
     }
     
-    [self.bridge.eventDispatcher sendAppEventWithName:@"spotlightSearchItemTapped" body:uniqueItemIdentifier];
+    [self.bridge.eventDispatcher sendAppEventWithName:kSpotlightSearchItemTapped body:uniqueItemIdentifier];
 }
 
 RCT_EXPORT_METHOD(indexItem:(NSDictionary *)item resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
