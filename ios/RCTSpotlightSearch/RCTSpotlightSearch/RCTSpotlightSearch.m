@@ -8,9 +8,9 @@
 
 @import CoreSpotlight;
 @import MobileCoreServices;
-#import "RCTBridge.h"
-#import "RCTSpotlightSearch.h"
-#import "RCTEventDispatcher.h"
+#import <React/RCTBridge.h>
+#import <React/RCTSpotlightSearch.h>
+#import <React/RCTEventDispatcher.h>
 
 static NSString *const kHandleContinueUserActivityNotification = @"handleContinueUserActivity";
 static NSString *const kUserActivityKey = @"userActivity";
