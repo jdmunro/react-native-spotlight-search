@@ -22,8 +22,5 @@
     "spotlight",
     "search"
   ],
-  "homepage": "https://github.com/jdmunro/react-native-spotlight-search#readme",
-  "peerDependencies": {
-    "react-native": "^0.28.0"
-  }
+  "homepage": "https://github.com/jdmunro/react-native-spotlight-search#readme"
 }

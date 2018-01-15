@@ -20,9 +20,9 @@ Please note this is an early version and the features and API are likely to chan
 
 ### iOS
 
-#### With [`rnpm`](https://github.com/rnpm/rnpm)
+#### With `react-native link`
 
-`$ rnpm link`
+`$ react-native link`
 
 #### Manually
 
