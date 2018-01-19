@@ -53,6 +53,10 @@ RCT_EXPORT_MODULE();
     [[NSNotificationCenter defaultCenter] removeObserver:_bundleDidLoadObserver];
 }
 
++ (BOOL)requiresMainQueueSetup {
+    return YES;
+}
+
 - (dispatch_queue_t)methodQueue
 {
     return dispatch_get_main_queue();
