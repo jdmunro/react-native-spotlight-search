@@ -1,41 +1,57 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
-  Platform,
+  AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  Image,
 } from 'react-native';
+import SpotlightSearch from 'react-native-spotlight-search';
+import banana from './banana.png'
+import strawberry from './strawberry.png'
+import kiwi from './kiwi.png'
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
+const sampleFruits = [
+  {
+    name: 'Strawberry',
+    details: 'A sweet and juicy fruit.',
+    key: '1',
+    image: strawberry,
+    keywords: ['delicious', 'edible'],
+  },
+  {
+    name: 'Banana',
+    details: 'A bright yellow fruit.',
+    key: '2',
+    image: banana,
+    keywords: ['plantain'],
+  },
+  {
+    name: 'Kiwi',
+    details: 'Not a type of bird.',
+    key: '3',
+    image: kiwi,
+    keywords: ['new zeland'],
+  },
+];
+
+SpotlightSearch.searchItemTapped((uniqueIdentifier) => {
+  const selectedFruit = sampleFruits.filter((fruit) => fruit.key === uniqueIdentifier)[0];
+
+  alert(`You tapped on ${selectedFruit.name}!`);
 });
 
-export default class App extends Component<{}> {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
-      </View>
-    );
-  }
-}
+const indexSearchableItems = (() => {
+  SpotlightSearch.indexItems(sampleFruits.map((fruit) => {
+    return {
+      title: fruit.name,
+      contentDescription: fruit.details,
+      uniqueIdentifier: fruit.key,
+      thumbnailUri: fruit.image.path,
+      keywords: fruit.keywords,
+    };
+  }));
+})();
 
 const styles = StyleSheet.create({
   container: {
@@ -44,14 +60,53 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-  welcome: {
+  introText: {
+    marginTop: 64,
+  },
+  row: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingLeft: 10,
+    paddingRight: 10,
+  },
+  rowTextContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    padding: 4,
+  },
+  rowTitle: {
     fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
   },
-  instructions: {
-    textAlign: 'center',
+  rowDescription: {
     color: '#333333',
-    marginBottom: 5,
   },
+  rowImage: {
+    width: 64,
+    height: 64,
+  }
 });
+
+const FruitRow = ({fruit}) => (
+  <View style={styles.row}>
+    <Image resizeMode={Image.resizeMode.contain}
+      style={styles.rowImage}
+      source={fruit.image}/>
+    <View style={styles.rowTextContainer}>
+      <Text style={styles.rowTitle}>{fruit.name}</Text>
+      <Text style={styles.rowDescription}>{fruit.details}</Text>
+    </View>
+  </View>
+);
+
+const Example = () => (
+  <View style={styles.container}>
+    <Text style={styles.introText}>The items below have been added to the Spotlight search index on this device</Text>
+    {sampleFruits.map((fruit) => (
+      <FruitRow key={fruit.key}
+        fruit={fruit}/>
+    ))}
+  </View>
+);
+
+export default Example;
