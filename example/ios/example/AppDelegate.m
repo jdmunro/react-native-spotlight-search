@@ -8,7 +8,7 @@
  */
 
 #import "AppDelegate.h"
-
+#import "RCTSpotlightSearch.h"
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
 
@@ -31,6 +31,12 @@
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
+  return YES;
+}
+
+- (BOOL)application:(UIApplication *)application continueUserActivity:(nonnull NSUserActivity *)userActivity restorationHandler:(nonnull void (^)(NSArray * _Nullable))restorationHandler
+{
+  [RCTSpotlightSearch handleContinueUserActivity:userActivity];
   return YES;
 }
 
