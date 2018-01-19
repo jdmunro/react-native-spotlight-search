@@ -56,19 +56,18 @@ const indexSearchableItems = (() => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
+    paddingLeft: 10,
+    paddingRight: 10,
   },
   introText: {
     marginTop: 64,
   },
   row: {
-    flex: 1,
+    height: 120,
     flexDirection: 'row',
     alignItems: 'center',
-    paddingLeft: 10,
-    paddingRight: 10,
   },
   rowTextContainer: {
     flex: 1,
