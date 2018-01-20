@@ -116,8 +116,9 @@ RCT_EXPORT_METHOD(indexItems:(NSArray *)items resolver:(RCTPromiseResolveBlock)r
         attributeSet.contentDescription = item[@"contentDescription"];
         attributeSet.keywords = item[@"keywords"];
         
-        if (item[@"thumbnailUri"]) {
-            attributeSet.thumbnailURL = [NSURL fileURLWithPath:item[@"thumbnailUri"]];
+        if (item[@"thumbnailName"]) {
+            UIImage *image = [UIImage imageNamed:item[@"thumbnailName"]];
+            attributeSet.thumbnailData = UIImagePNGRepresentation(image);
         }
         
         CSSearchableItem *searchableItem = [[CSSearchableItem alloc] initWithUniqueIdentifier:item[@"uniqueIdentifier"]
