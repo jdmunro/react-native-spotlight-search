@@ -25,7 +25,6 @@
   ],
   "homepage": "https://github.com/jdmunro/react-native-spotlight-search#readme",
   "peerDependencies": {
-    "react": "*",
     "react-native": "*"
   }
 }
