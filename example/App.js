@@ -97,7 +97,7 @@ const FruitRow = ({fruit}) => (
 
 const Example = () => (
   <View style={styles.container}>
-    <Text style={styles.introText}>The items below have been added to the Spotlight search index on this device</Text>
+    <Text style={styles.introText}>The items below have been added to the Spotlight search index on this device.</Text>
     {sampleFruits.map((fruit) => (
       <FruitRow key={fruit.key}
         fruit={fruit}/>
