@@ -2,8 +2,6 @@
 
 A React Native module for iOS that provides Spotlight search functionality. This allows you to index content from within your React Native app so that it appears in the iOS device's Spotlight search index, potentially increasing the exposure of your app.
 
-Please note this is an early version and the features and API are likely to change.
-
 ## Current Features
 
 * Adding items.
