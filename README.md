@@ -16,6 +16,12 @@ Please note this is an early version and the features and API are likely to chan
 
 ## Installation
 
+With yarn (recommended):
+
+`$ yarn add react-native-spotlight-search`
+
+Or with NPM:
+
 `$ npm install react-native-spotlight-search --save`
 
 ### iOS
