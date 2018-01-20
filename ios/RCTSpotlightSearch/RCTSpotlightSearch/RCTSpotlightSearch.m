@@ -57,8 +57,11 @@ RCT_EXPORT_MODULE();
     return YES;
 }
 
-- (dispatch_queue_t)methodQueue
-{
+- (NSArray<NSString *> *)supportedEvents {
+    return @[kSpotlightSearchItemTapped];
+}
+
+- (dispatch_queue_t)methodQueue {
     return dispatch_get_main_queue();
 }
 
@@ -97,7 +100,7 @@ RCT_EXPORT_MODULE();
         return;
     }
     
-    [self.bridge.eventDispatcher sendAppEventWithName:kSpotlightSearchItemTapped body:uniqueItemIdentifier];
+    [self sendEventWithName:kSpotlightSearchItemTapped body:uniqueItemIdentifier];
 }
 
 RCT_EXPORT_METHOD(indexItem:(NSDictionary *)item resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {

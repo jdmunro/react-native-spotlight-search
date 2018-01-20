@@ -1,7 +1,9 @@
-import {NativeModules, NativeAppEventEmitter} from 'react-native';
+import {NativeModules, NativeEventEmitter} from 'react-native';
 
 const {SpotlightSearch} = NativeModules;
 
-SpotlightSearch.searchItemTapped = (callback) => NativeAppEventEmitter.addListener('spotlightSearchItemTapped', callback);
+const spotlightEventEmitter = new NativeEventEmitter(SpotlightSearch);
+
+SpotlightSearch.searchItemTapped = (callback) => spotlightEventEmitter.addListener('spotlightSearchItemTapped', callback);
 
 export default SpotlightSearch;

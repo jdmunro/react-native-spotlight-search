@@ -7,30 +7,27 @@ import {
   Image,
 } from 'react-native';
 import SpotlightSearch from 'react-native-spotlight-search';
-import banana from './banana.png'
-import strawberry from './strawberry.png'
-import kiwi from './kiwi.png'
 
 const sampleFruits = [
   {
     name: 'Strawberry',
     details: 'A sweet and juicy fruit.',
     key: '1',
-    image: strawberry,
+    image: 'strawberry',
     keywords: ['delicious', 'edible'],
   },
   {
     name: 'Banana',
     details: 'A bright yellow fruit.',
     key: '2',
-    image: banana,
+    image: 'banana',
     keywords: ['plantain'],
   },
   {
     name: 'Kiwi',
     details: 'Not a type of bird.',
     key: '3',
-    image: kiwi,
+    image: 'kiwi',
     keywords: ['new zeland'],
   },
 ];
@@ -47,7 +44,7 @@ const indexSearchableItems = (() => {
       title: fruit.name,
       contentDescription: fruit.details,
       uniqueIdentifier: fruit.key,
-      thumbnailUri: fruit.image.path,
+      thumbnailName: fruit.image,
       keywords: fruit.keywords,
     };
   }));
@@ -90,7 +87,7 @@ const FruitRow = ({fruit}) => (
   <View style={styles.row}>
     <Image resizeMode={Image.resizeMode.contain}
       style={styles.rowImage}
-      source={fruit.image}/>
+      source={{uri: fruit.image}}/>
     <View style={styles.rowTextContainer}>
       <Text style={styles.rowTitle}>{fruit.name}</Text>
       <Text style={styles.rowDescription}>{fruit.details}</Text>
