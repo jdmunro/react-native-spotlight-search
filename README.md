@@ -8,7 +8,7 @@ A React Native module for iOS that provides Spotlight search functionality. This
 * Updating items.
 * Deleting items.
 * Register a callback to handle when a search item is tapped.
-* Limited support for images.
+* Basic support for images (offline, local images).
 
 ![Spotlight Search Demo](http://i.imgur.com/tbI3yAs.gif)
 
