@@ -3,6 +3,7 @@
   "version": "0.2.1",
   "description": "A React Native module for iOS that provides Spotlight search functionality.",
   "main": "index.js",
+  "files": ["index.js", "ios/*"],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -22,5 +23,8 @@
     "spotlight",
     "search"
   ],
-  "homepage": "https://github.com/jdmunro/react-native-spotlight-search#readme"
+  "homepage": "https://github.com/jdmunro/react-native-spotlight-search#readme",
+  "peerDependencies": {
+    "react-native": "*"
+  }
 }

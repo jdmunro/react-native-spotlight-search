@@ -66,14 +66,14 @@ SpotlightSearch.indexItems([
         contentDescription: 'A sweet and juicy fruit.',
         uniqueIdentifier: '1',
         domain: 'fruit',
-        thumbnailUri: require('image!strawberry').path,
+        thumbnailName: 'strawberry',
     },
     {
         title: 'Kiwi',
         contentDescription: 'Not a type of bird.',
         uniqueIdentifier: '2',
         domain: 'fruit',
-        thumbnailUri: require('kiwi!strawberry').path,
+        thumbnailName: 'kiwi',
     },
 ]);
 ```
@@ -85,7 +85,7 @@ SpotlightSearch.indexItem({
     title: 'Strawberry',
     contentDescription: 'A sweet and juicy fruit.',
     uniqueIdentifier: '1',
-    thumbnailUri: require('image!strawberry').path,
+    thumbnailName: 'strawberry',
 });
 ```
 
@@ -97,7 +97,7 @@ SpotlightSearch.indexItem({
 |**`contentDescription`**|A description which appears below the title in the search results.|`string`|No|
 |**`uniqueIdentifier`**|A unique and stable identifier. Used to refer to the item. |`string`|Yes|
 |**`domain`**|A string for grouping related items together in a way that makes sense. Not displayed to the user. |`string`|Yes|
-|**`thumbnailUri`**|A local file URI to a thumbnail image. See [A Note About Thumbnails](#a-note-about-thumbnails).|`string`|No|
+|**`thumbnailName`**|A local file name/key to a thumbnail image. See [A Note About Thumbnails](#a-note-about-thumbnails).|`string`|No|
 |**`keywords`**|An array of keywords which can be used to help inform the search index. Not visible to the user.|`[string]`|No|
 
 ### Updating Items
@@ -134,7 +134,7 @@ SpotlightSearch.deleteAllItems().then(() => {
       title: 'Strawberry',
       contentDescription: 'A sweet and juicy fruit.',
       uniqueIdentifier: '1',
-      thumbnailUri: require('image!strawberry').path,
+      thumbnailName: 'strawberry',
   });
 });
 ```
@@ -153,9 +153,9 @@ The parameter will be the ```uniqueIdentifier``` that the item was indexed with.
 
 ## A Note About Thumbnails
 
-Currently, in order to use an image it must exist locally on the device.
+Currently, in order to use an image it must exist locally on the device. This is a limitation of iOS rather than of this library.
 
-This means it is not possible to use images hosted on the web. Additionally, there is a limitation that you cannot use a statically imported image managed by React Native. Instead, you _must_ manually add the image to your app's asset catalog or alternatively use an image that is created within the app which you can access the URI of.
+This means it is not possible to use images hosted on the web. Additionally, there is a limitation that you cannot use a statically imported image managed by React Native. Instead, you _must_ manually add the image to your app's asset catalog.
 
 Suggestions on how to improve this are welcome!
 

@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <React/RCTBridgeModule.h>
+#import <React/RCTEventEmitter.h>
 
-@interface RCTSpotlightSearch : NSObject <RCTBridgeModule>
+@interface RCTSpotlightSearch : RCTEventEmitter <RCTBridgeModule>
 
 + (void)handleContinueUserActivity:(NSUserActivity *)userActivity;
 

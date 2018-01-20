@@ -49,12 +49,21 @@ RCT_EXPORT_MODULE();
 }
 
 - (void)dealloc {
+    [[[self class] activityQueue] removeAllObjects];
+    
     [[NSNotificationCenter defaultCenter] removeObserver:_continueUserActivityObserver];
     [[NSNotificationCenter defaultCenter] removeObserver:_bundleDidLoadObserver];
 }
 
-- (dispatch_queue_t)methodQueue
-{
++ (BOOL)requiresMainQueueSetup {
+    return YES;
+}
+
+- (NSArray<NSString *> *)supportedEvents {
+    return @[kSpotlightSearchItemTapped];
+}
+
+- (dispatch_queue_t)methodQueue {
     return dispatch_get_main_queue();
 }
 
@@ -93,7 +102,7 @@ RCT_EXPORT_MODULE();
         return;
     }
     
-    [self.bridge.eventDispatcher sendAppEventWithName:kSpotlightSearchItemTapped body:uniqueItemIdentifier];
+    [self sendEventWithName:kSpotlightSearchItemTapped body:uniqueItemIdentifier];
 }
 
 RCT_EXPORT_METHOD(indexItem:(NSDictionary *)item resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
@@ -109,7 +118,10 @@ RCT_EXPORT_METHOD(indexItems:(NSArray *)items resolver:(RCTPromiseResolveBlock)r
         attributeSet.contentDescription = item[@"contentDescription"];
         attributeSet.keywords = item[@"keywords"];
         
-        if (item[@"thumbnailUri"]) {
+        if (item[@"thumbnailName"]) {
+            UIImage *image = [UIImage imageNamed:item[@"thumbnailName"]];
+            attributeSet.thumbnailData = UIImagePNGRepresentation(image);
+        } else if (item[@"thumbnailUri"]) {
             attributeSet.thumbnailURL = [NSURL fileURLWithPath:item[@"thumbnailUri"]];
         }
         
