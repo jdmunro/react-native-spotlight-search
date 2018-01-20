@@ -49,6 +49,8 @@ RCT_EXPORT_MODULE();
 }
 
 - (void)dealloc {
+    [[[self class] activityQueue] removeAllObjects];
+    
     [[NSNotificationCenter defaultCenter] removeObserver:_continueUserActivityObserver];
     [[NSNotificationCenter defaultCenter] removeObserver:_bundleDidLoadObserver];
 }
