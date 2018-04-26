@@ -27,6 +27,8 @@ static NSString *const kSpotlightSearchItemTapped = @"spotlightSearchItemTapped"
 
 RCT_EXPORT_MODULE();
 
+static NSString* initialIdentifier;
+
 @synthesize bridge = _bridge;
 
 - (instancetype)init {
@@ -101,8 +103,14 @@ RCT_EXPORT_MODULE();
     if (!uniqueItemIdentifier) {
         return;
     }
+
+    initialIdentifier = uniqueItemIdentifier;
     
     [self sendEventWithName:kSpotlightSearchItemTapped body:uniqueItemIdentifier];
+}
+
+RCT_EXPORT_METHOD(getInitialSearchItem:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
+    resolve(initialIdentifier);
 }
 
 RCT_EXPORT_METHOD(indexItem:(NSDictionary *)item resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
