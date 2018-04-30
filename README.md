@@ -145,12 +145,21 @@ SpotlightSearch.deleteAllItems().then(() => {
 
 ### Handling User Interactions
 
-Optionally, you can choose to add a custom handler that will be invoked in the event of a user tapping one of the search items in the Spotlight results:
+You can choose to add a custom handler that will be invoked in the event of a user tapping one of the search items in the Spotlight results:
 
 ```
 SpotlightSearch.searchItemTapped((uniqueIdentifier) => {
   alert(`You tapped on ${uniqueIdentifier}!`);
 });
+```
+
+Optionally, if you want to capture the search item that was tapped to open the app (perhaps the listener was set after the event was triggered):
+
+```
+SpotlightSearch.getInitialSearchItem().then((uniqueIdentifier) => {
+  alert(`You tapped on ${uniqueIdentifier} and opened the app!`);
+});
+
 ```
 
 The parameter will be the ```uniqueIdentifier``` that the item was indexed with. You can use this to lookup the item and display information about it, e.g. by navigating to a relevant page in your app.
