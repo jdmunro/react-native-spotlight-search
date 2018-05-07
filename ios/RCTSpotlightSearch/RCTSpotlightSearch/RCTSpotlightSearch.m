@@ -21,6 +21,7 @@ static NSString *const kSpotlightSearchItemTapped = @"spotlightSearchItemTapped"
 @property (nonatomic, strong) id<NSObject> continueUserActivityObserver;
 @property (nonatomic, strong) id<NSObject> bundleDidLoadObserver;
 @property (nonatomic, copy) NSString *initialIdentifier;
+@property (nonatomic, assign) BOOL hasListeners;
 
 @end
 
@@ -68,6 +69,14 @@ RCT_EXPORT_MODULE();
     return dispatch_get_main_queue();
 }
 
+- (void)startObserving {
+    self.hasListeners = YES;
+}
+
+- (void)stopObserving {
+    self.hasListeners = NO;
+}
+
 - (void)drainActivityQueue {
     NSMutableArray *activityQueue = [[self class] activityQueue];
     
@@ -104,6 +113,10 @@ RCT_EXPORT_MODULE();
     }
 
     self.initialIdentifier = uniqueItemIdentifier;
+    
+    if (!self.hasListeners) {
+        return;
+    }
     
     [self sendEventWithName:kSpotlightSearchItemTapped body:uniqueItemIdentifier];
 }
