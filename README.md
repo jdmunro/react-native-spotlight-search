@@ -15,20 +15,18 @@ A React Native module for iOS that provides Spotlight search functionality. This
 ## Installation
 
 With yarn (recommended):
-
 `$ yarn add react-native-spotlight-search`
 
 Or with NPM:
-
 `$ npm install react-native-spotlight-search --save`
 
 ### iOS
 
-#### With `react-native link`
+#### RN >= 0.60
+Auto linking or Manually below
 
-`$ react-native link`
-
-#### Manually
+#### RN < 0.60
+`react-native link react-native-spotlight-search` or Manually below
 
 Simply add `RCTSpotlightSearch.xcodeproj` to **Libraries** and add `libRCTSpotlightSearch.a` to **Link Binary With Libraries** under **Build Phases**. [More info and screenshots about how to do this is available in the React Native documentation](http://facebook.github.io/react-native/docs/linking-libraries-ios.html#content).
 
