@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {
-  AppRegistry,
   StyleSheet,
   Text,
   View,
   Image,
+  Button,
 } from 'react-native';
 import SpotlightSearch from 'react-native-spotlight-search';
 
@@ -38,17 +38,15 @@ SpotlightSearch.searchItemTapped((uniqueIdentifier) => {
   alert(`You tapped on ${selectedFruit.name}!`);
 });
 
-const indexSearchableItems = (() => {
-  SpotlightSearch.indexItems(sampleFruits.map((fruit) => {
-    return {
-      title: fruit.name,
-      contentDescription: fruit.details,
-      uniqueIdentifier: fruit.key,
-      thumbnailName: fruit.image,
-      keywords: fruit.keywords,
-    };
-  }));
-})();
+SpotlightSearch.indexItems(sampleFruits.map((fruit) => {
+  return {
+    title: fruit.name,
+    contentDescription: fruit.details,
+    uniqueIdentifier: fruit.key,
+    thumbnailName: fruit.image,
+    keywords: fruit.keywords,
+  };
+}));
 
 const styles = StyleSheet.create({
   container: {
@@ -85,7 +83,7 @@ const styles = StyleSheet.create({
 
 const FruitRow = ({fruit}) => (
   <View style={styles.row}>
-    <Image resizeMode={Image.resizeMode.contain}
+    <Image resizeMode={"contain"}
       style={styles.rowImage}
       source={{uri: fruit.image}}/>
     <View style={styles.rowTextContainer}>
@@ -99,9 +97,12 @@ const Example = () => (
   <View style={styles.container}>
     <Text style={styles.introText}>The items below have been added to the Spotlight search index on this device.</Text>
     {sampleFruits.map((fruit) => (
-      <FruitRow key={fruit.key}
-        fruit={fruit}/>
+      <FruitRow
+        key={fruit.key}
+        fruit={fruit}
+      />
     ))}
+    <Button title={'Delete all items from the suggestion list'} onPress={SpotlightSearch.deleteAllItems} />
   </View>
 );
 
