@@ -28,8 +28,8 @@ export default {
         android: nullFunc
     }),
     deleteAllItems: Platform.select({
-       ios: SpotlightSearch?.deleteAllItems,
-       android:  nullFunc
+        ios: () => SpotlightSearch?.deleteAllItems(),
+        android: nullFunc
     }),
     searchItemTapped: Platform.select({
         ios: (callback) => spotlightEventEmitter?.addListener(EVENT_ITEM_TAPPED, callback),
