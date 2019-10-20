@@ -5,7 +5,8 @@
   "main": "index.js",
   "files": [
     "index.js",
-    "ios/*"
+    "ios/*",
+    "react-native-spotlight-search.podspec"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
