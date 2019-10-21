@@ -100,6 +100,7 @@ SpotlightSearch.indexItem({
 |**`uniqueIdentifier`**|A unique and stable identifier. Used to refer to the item. |`string`|Yes|
 |**`domain`**|A string for grouping related items together in a way that makes sense. Not displayed to the user. |`string`|Yes|
 |**`thumbnailName`**|A local file name/key to a thumbnail image. See [A Note About Thumbnails](#a-note-about-thumbnails).|`string`|No|
+|**`thumbnailData`**|A base64 string representation of a thumbnail image. See [A Note About Thumbnails](#a-note-about-thumbnails).|`string`|No|
 |**`keywords`**|An array of keywords which can be used to help inform the search index. Not visible to the user.|`[string]`|No|
 
 ### Updating Items
@@ -164,16 +165,14 @@ The parameter will be the ```uniqueIdentifier``` that the item was indexed with.
 
 ## A Note About Thumbnails
 
-Currently, in order to use an image it must exist locally on the device. This is a limitation of iOS rather than of this library.
+Currently, in order to use an image path it must exist locally on the device in the project assets folder. This is a limitation of iOS rather than of this library.
 
-This means it is not possible to use images hosted on the web. Additionally, there is a limitation that you cannot use a statically imported image managed by React Native. Instead, you _must_ manually add the image to your app's asset catalog.
-
-Suggestions on how to improve this are welcome!
+To use images that are not in your assets folder (local or remote files), read them as
+base64 and include the string value using the ```thumbnailData``` property.
 
 ## To-do
 
 * Support additional built in types (location etc).
-* Improve image handling.
 * Public links.
 * Initial release.
 * New iOS 10 features.
