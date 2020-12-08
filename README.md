@@ -34,7 +34,7 @@ Simply add `RCTSpotlightSearch.xcodeproj` to **Libraries** and add `libRCTSpotli
 
 If you wish to be able to handle search item tapped callbacks, you'll need to add the following code to your AppDelegate file:
 
-```
+```objc
 #import "RCTSpotlightSearch.h"
 
 - (BOOL)application:(UIApplication *)application continueUserActivity:(nonnull NSUserActivity *)userActivity restorationHandler:(nonnull void (^)(NSArray * _Nullable))restorationHandler {
@@ -55,13 +55,15 @@ Like this:
 
 First up, import the module:
 
-```import SpotlightSearch from 'react-native-spotlight-search';```
+```js
+import SpotlightSearch from 'react-native-spotlight-search';
+```
 
 ### Indexing Items
 
 You can either add an array of items:
 
-```
+```js
 SpotlightSearch.indexItems([
     {
         title: 'Strawberry',
@@ -82,7 +84,7 @@ SpotlightSearch.indexItems([
 
 Or individual items:
 
-```
+```js
 SpotlightSearch.indexItem({
     title: 'Strawberry',
     contentDescription: 'A sweet and juicy fruit.',
@@ -111,19 +113,19 @@ Simply use the same method as adding items. Be sure to reference the same key wh
 
 Items can be removed by identifier:
 
-```
+```js
 SpotlightSearch.deleteItemsWithIdentifiers(["1", "2"]);
 ```
 
 Or by domain:
 
-```
+```js
 SpotlightSearch.deleteItemsInDomains(["fruit"]);
 ```
 
 Alternatively, you can delete _all_ items indexed by your app:
 
-```
+```js
 SpotlightSearch.deleteAllItems();
 ```
 
@@ -131,7 +133,7 @@ SpotlightSearch.deleteAllItems();
 
 All API index and delete methods are asynchronous and return promises. You can chain things like this:
 
-```
+```js
 SpotlightSearch.deleteAllItems().then(() => {
   SpotlightSearch.indexItem({
       title: 'Strawberry',
@@ -146,7 +148,7 @@ SpotlightSearch.deleteAllItems().then(() => {
 
 You can choose to add a custom handler that will be invoked in the event of a user tapping one of the search items in the Spotlight results:
 
-```
+```js
 SpotlightSearch.searchItemTapped((uniqueIdentifier) => {
   alert(`You tapped on ${uniqueIdentifier}!`);
 });
@@ -154,7 +156,7 @@ SpotlightSearch.searchItemTapped((uniqueIdentifier) => {
 
 Optionally, if you want to capture the search item that was tapped to open the app (perhaps the listener was set after the event was triggered):
 
-```
+```js
 SpotlightSearch.getInitialSearchItem().then((uniqueIdentifier) => {
   alert(`You tapped on ${uniqueIdentifier} and opened the app!`);
 });
@@ -177,4 +179,4 @@ base64 and include the string value using the ```thumbnailData``` property.
 * Initial release.
 * New iOS 10 features.
 
-PRs welcome ;-)
+PRs welcome ❤️
