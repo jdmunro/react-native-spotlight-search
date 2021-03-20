@@ -19,7 +19,7 @@ export default {
         ios: (items) => SpotlightSearch?.indexItems(items),
         android: nullFunc
     }),
-    deleteItemsWithIds: Platform.select({
+    deleteItemsWithIdentifiers: Platform.select({
         ios: (ids) => SpotlightSearch?.deleteItemsWithIdentifiers(ids),
         android: nullFunc
     }),
