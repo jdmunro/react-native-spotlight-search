@@ -1,1 +1,1 @@
-module.exports = require("./plugin/build/withSpotlight");
+module.exports = require("./plugin/src/withSpotlight");
