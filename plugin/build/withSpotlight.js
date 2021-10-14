@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const config_plugins_1 = require("@expo/config-plugins");
-const pkg = require("@react-native-voice/voice/package.json");
+const pkg = require("react-native-spotlight-search/package.json");
 const SPOTLIGHT_IMPORT = `#import "RCTSpotlightSearch.h"`;
 const SPOTLIGHT_ACTIVITY = `- (BOOL)application:(UIApplication *)application continueUserActivity:(nonnull NSUserActivity *)userActivity restorationHandler:(nonnull void (^)(NSArray * _Nullable))restorationHandler {
   [RCTSpotlightSearch handleContinueUserActivity:userActivity];
