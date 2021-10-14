@@ -1,6 +1,7 @@
 {
   "name": "react-native-spotlight-search",
   "version": "2.0.0",
+  "type": "module",
   "description": "A React Native module for iOS that provides Spotlight search functionality.",
   "main": "index.js",
   "types": "index.d.ts",

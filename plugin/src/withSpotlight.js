@@ -1,4 +1,7 @@
-import { createRunOncePlugin, withAppDelegate } from "@expo/config-plugins";
+const {
+  createRunOncePlugin,
+  withAppDelegate,
+} = require("@expo/config-plugins");
 const pkg = require("react-native-spotlight-search/package.json");
 
 const SPOTLIGHT_IMPORT = `#import "RCTSpotlightSearch.h"`;
@@ -36,8 +39,15 @@ const withSpotlightAppDelegate = (config) => {
   });
 };
 
-const withSpotlight = (config) => {
+const withSpotlightSearch = (config) => {
   config = withSpotlightAppDelegate(config);
   return config;
 };
-export default createRunOncePlugin(withSpotlight, pkg.name, pkg.version);
+
+const withSpotlight = createRunOncePlugin(
+  withSpotlightSearch,
+  pkg.name,
+  pkg.version
+);
+
+module.exports = withSpotlight;
