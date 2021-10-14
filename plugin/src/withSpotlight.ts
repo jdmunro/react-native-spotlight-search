@@ -1,7 +1,3 @@
-// const {
-//   createRunOncePlugin,
-//   withAppDelegate,
-// } = require("@expo/config-plugins");
 import {
   ConfigPlugin,
   withAppDelegate,
