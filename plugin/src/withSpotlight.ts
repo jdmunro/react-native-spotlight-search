@@ -1,8 +1,16 @@
-const {
-  createRunOncePlugin,
+// const {
+//   createRunOncePlugin,
+//   withAppDelegate,
+// } = require("@expo/config-plugins");
+import {
+  ConfigPlugin,
   withAppDelegate,
-} = require("@expo/config-plugins");
-const pkg = require("react-native-spotlight-search/package.json");
+  createRunOncePlugin,
+  WarningAggregator,
+} from "@expo/config-plugins";
+const pkg = require("@react-native-voice/voice/package.json");
+
+export type Props = {};
 
 const SPOTLIGHT_IMPORT = `#import "RCTSpotlightSearch.h"`;
 
@@ -11,7 +19,7 @@ const SPOTLIGHT_ACTIVITY = `- (BOOL)application:(UIApplication *)application con
   return YES;
 }`;
 
-function modifyAppDelegate(appDelegate) {
+const modifyAppDelegate = (appDelegate: any) => {
   if (!appDelegate.includes(SPOTLIGHT_IMPORT)) {
     appDelegate = SPOTLIGHT_IMPORT + appDelegate;
     if (appDelegate.includes(SPOTLIGHT_ACTIVITY)) {
@@ -21,9 +29,9 @@ function modifyAppDelegate(appDelegate) {
     }
   }
   return appDelegate;
-}
+};
 
-const withSpotlightAppDelegate = (config) => {
+const withSpotlightAppDelegate: ConfigPlugin = (config) => {
   return withAppDelegate(config, (config) => {
     if (config.modResults.language === "objc") {
       config.modResults.contents = modifyAppDelegate(
@@ -39,15 +47,9 @@ const withSpotlightAppDelegate = (config) => {
   });
 };
 
-const withSpotlightSearch = (config) => {
+const withSpotlight: ConfigPlugin<Props> = (config) => {
   config = withSpotlightAppDelegate(config);
   return config;
 };
 
-const withSpotlight = createRunOncePlugin(
-  withSpotlightSearch,
-  pkg.name,
-  pkg.version
-);
-
-module.exports = withSpotlight;
+export default createRunOncePlugin(withSpotlight, pkg.name, pkg.version);
