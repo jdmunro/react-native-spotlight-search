@@ -14,11 +14,11 @@ const SPOTLIGHT_ACTIVITY = `- (BOOL)application:(UIApplication *)application con
 function modifyAppDelegate(appDelegate) {
   if (!appDelegate.includes(SPOTLIGHT_IMPORT)) {
     appDelegate = SPOTLIGHT_IMPORT + appDelegate;
-  }
-  if (appDelegate.includes(SPOTLIGHT_ACTIVITY)) {
-    appDelegate = appDelegate + SPOTLIGHT_ACTIVITY;
-  } else {
-    throw new Error("Failed to detect RCTSpotlightSearch in AppDelegate.m");
+    if (appDelegate.includes(SPOTLIGHT_ACTIVITY)) {
+      appDelegate = appDelegate + SPOTLIGHT_ACTIVITY;
+    } else {
+      throw new Error("Failed to detect RCTSpotlightSearch in AppDelegate.m");
+    }
   }
   return appDelegate;
 }
