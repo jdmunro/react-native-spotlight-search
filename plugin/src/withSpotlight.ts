@@ -5,7 +5,7 @@ import {
   withAppDelegate,
 } from "@expo/config-plugins";
 
-const pkg = require("@react-native-voice/voice/package.json");
+const pkg = require("react-native-spotlight-search/package.json");
 
 const SPOTLIGHT_IMPORT = `#import "RCTSpotlightSearch.h"
 `;
