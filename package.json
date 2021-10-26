@@ -6,7 +6,7 @@
   "types": "index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "yarn build:plugin",
+    "postinstall": "yarn build:plugin",
     "build:plugin": "tsc --build plugin"
   },
   "repository": {
