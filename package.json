@@ -9,7 +9,8 @@
     "index.d.ts",
     "ios/*",
     "react-native-spotlight-search.podspec",
-    "plugin/*"
+    "plugin/*",
+    "app.plugin.js"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
