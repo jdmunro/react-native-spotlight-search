@@ -15,17 +15,18 @@
 static NSString *const kHandleContinueUserActivityNotification = @"handleContinueUserActivity";
 static NSString *const kUserActivityKey = @"userActivity";
 static NSString *const kSpotlightSearchItemTapped = @"spotlightSearchItemTapped";
+static NSString * initialIdentifier = @"";
 
 @interface RCTSpotlightSearch ()
 
 @property (nonatomic, strong) id<NSObject> continueUserActivityObserver;
 @property (nonatomic, strong) id<NSObject> bundleDidLoadObserver;
-@property (nonatomic, copy) NSString *initialIdentifier;
 @property (nonatomic, assign) BOOL hasListeners;
 
 @end
 
 @implementation RCTSpotlightSearch
+static NSString *initialIdentifier;
 
 RCT_EXPORT_MODULE();
 
@@ -112,7 +113,7 @@ RCT_EXPORT_MODULE();
         return;
     }
 
-    self.initialIdentifier = uniqueItemIdentifier;
+    initialIdentifier = uniqueItemIdentifier;
     
     if (!self.hasListeners) {
         return;
@@ -122,7 +123,7 @@ RCT_EXPORT_MODULE();
 }
 
 RCT_EXPORT_METHOD(getInitialSearchItem:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
-    resolve(self.initialIdentifier);
+    resolve(initialIdentifier);
 }
 
 RCT_EXPORT_METHOD(indexItem:(NSDictionary *)item resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {

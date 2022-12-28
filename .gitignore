@@ -3,4 +3,5 @@
 
 \.DS_Store
 
-plugin/build 
+plugin/build
+.idea
