@@ -28,7 +28,7 @@ const modifyAppDelegate = (appDelegate: string) => {
 
 const withSpotlightAppDelegate = (config: any) => {
   return withAppDelegate(config, (config) => {
-    if (config.modResults.language === "objc") {
+    if (['objc', 'objcpp'].includes(config.modResults.language)) {
       config.modResults.contents = modifyAppDelegate(
         config.modResults.contents
       );
