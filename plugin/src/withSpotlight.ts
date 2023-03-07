@@ -12,8 +12,7 @@ const SPOTLIGHT_IMPORT = `#import "RCTSpotlightSearch.h"
 const SPOTLIGHT_ACTIVITY = `- (BOOL)application:(UIApplication *)application continueUserActivity:(nonnull NSUserActivity *)userActivity restorationHandler:(nonnull void (^)(NSArray<id<UIUserActivityRestoring>> * _Nullable))restorationHandler {`;
 
 const SPOTLIGHT_ACTIVITY_ADD = `- (BOOL)application:(UIApplication *)application continueUserActivity:(nonnull NSUserActivity *)userActivity restorationHandler:(nonnull void (^)(NSArray<id<UIUserActivityRestoring>> * _Nullable))restorationHandler {
-  [RCTSpotlightSearch handleContinueUserActivity:userActivity];
-  return YES;`;
+  [RCTSpotlightSearch handleContinueUserActivity:userActivity];`;
 
 const modifyAppDelegate = (appDelegate: string) => {
   if (!appDelegate.includes(SPOTLIGHT_IMPORT)) {
