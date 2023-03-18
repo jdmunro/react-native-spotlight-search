@@ -182,6 +182,17 @@ Optionally, if you want to capture the search item that was tapped to open the a
 SpotlightSearch.getInitialSearchItem().then((uniqueIdentifier) => {
   alert(`You tapped on ${uniqueIdentifier} and opened the app!`);
 });
+
+// example in a useEffect with listener cleanup
+useEffect(() => {
+    const spotlightListener = SpotlightSearch.searchItemTapped((uniqueIdentifier) => {
+        alert(`You tapped on ${uniqueIdentifier} and opened the app!`);
+    })
+    return () => {
+        // cleanup listener
+        spotlightListener.remove()
+    }
+}, [])
 ```
 
 The parameter will be the `uniqueIdentifier` that the item was indexed with. You can use this to lookup the item and display information about it, e.g. by navigating to a relevant page in your app.

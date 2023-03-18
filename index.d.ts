@@ -1,3 +1,5 @@
+import { NativeEventSubscription } from 'react-native'
+
 type SpotlightItem = {
     title: string
     contentDescription?: string
@@ -18,6 +20,6 @@ export function deleteItemsInDomains(itemDomains: string[]): Promise<void>;
 
 export function deleteAllItems(): Promise<void>
 
-export function searchItemTapped(callback: (uniqueIdentifier: string) => void): void;
+export function searchItemTapped(callback: (uniqueIdentifier: string) => void): NativeEventSubscription;
 
 export function getInitialSearchItem(): Promise<string>
